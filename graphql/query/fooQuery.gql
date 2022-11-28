@@ -1,0 +1,8 @@
+#import "../fragment/FooFragment.gql"
+query fooQuery($id: ID!) {
+  getFoo(id: $id) {
+    foo {
+      ...Foo
+    }
+  }
+}

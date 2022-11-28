@@ -1,0 +1,4 @@
+fragment Foo on Foo {
+  toto
+  tata
+}
