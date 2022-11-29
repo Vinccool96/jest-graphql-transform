@@ -45,11 +45,13 @@ const graphqlTransformer: SyncTransformer = {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   process(sourceText: string, sourcePath: string) {
-    const sourceLines = sourceText.split(/\n/)
+    const sourceLines = sourceText.split("\n")
     const linesWithImport = doImports(sourceLines, sourcePath)
     const foldedLines = linesWithImport.reduce((prev, curr) => `${prev}\n${curr}`)
 
-    return loader.call({ cacheable() {} }, foldedLines)
+    return {
+      code: loader.call({ cacheable() {} }, foldedLines),
+    }
   },
 }
 
