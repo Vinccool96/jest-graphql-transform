@@ -1,6 +1,6 @@
 {
   "name": "jest-graphql-transform",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Jest transformer for .gql imports",
   "type": "module",
   "main": "./dist/index.js",
@@ -9,7 +9,8 @@
     "build": "tsc -p tsconfig.base.json",
     "build:test": "tsc",
     "test": "yarn run build:test && jest",
-    "prepack": "rm -rf dist && yarn run build"
+    "prepack": "rm -rf dist && yarn run build",
+    "prepublish": "yarn run pack"
   },
   "files": ["dist", "src"],
   "repository": {
