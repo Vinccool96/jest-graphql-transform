@@ -1,13 +1,9 @@
 import type { Config } from "@jest/types"
 
 const config: Config.InitialOptions = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  moduleFileExtensions: [
-    "js",
-    "json",
-    "ts"
-  ],
+  preset: "ts-jest",
+  testEnvironment: "node",
+  moduleFileExtensions: ["js", "json", "ts"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
     "^~/(.*)$": "<rootDir>/$1",
@@ -15,8 +11,8 @@ const config: Config.InitialOptions = {
   transform: {
     "\\.(gql|graphql)$": "./dist/index.js",
     "\\.ts$": "ts-jest",
-    ".*": "babel-jest"
-  }
-};
+    ".*": "babel-jest",
+  },
+}
 
 export default config
