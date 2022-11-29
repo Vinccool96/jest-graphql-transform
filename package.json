@@ -1,5 +1,5 @@
 {
-  "name": "jest-transform-graphql",
+  "name": "jest-graphql-transform",
   "version": "1.0.0",
   "description": "Jest transformer for .gql imports",
   "type": "module",
@@ -19,8 +19,8 @@
     "jest",
     "graphql"
   ],
-  "author": "Turadg Aleahmad",
-  "license": "ISC",
+  "author": "Vinccool96",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/remind101/jest-transform-graphql/issues"
   },
