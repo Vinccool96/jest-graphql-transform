@@ -4,7 +4,7 @@ import { readFileSync } from "fs"
 import { getVersion } from "@jest/core"
 
 import loader from "graphql-tag"
-import { SyncTransformer } from "@jest/transform"
+import { SyncTransformer, TransformedSource } from "@jest/transform"
 
 function indexesOf<E>(
   array: Array<E>,
@@ -44,23 +44,22 @@ function doImports(
 }
 
 const graphqlTransformer: SyncTransformer = {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   process(sourceText: string, sourcePath: string) {
     const sourceLines = sourceText.split("\n")
     const linesWithImport = doImports(sourceLines, sourcePath)
     const foldedLines = linesWithImport.reduce((prev, curr) => `${prev}\n${curr}`)
 
     const result = loader.call({ cacheable() {} }, foldedLines)
+    const strResult = `module.exports = ${JSON.stringify(result)}`
 
     const majorJestVersion = parseInt(getVersion().split(".")[0])
 
     if (majorJestVersion >= 28) {
       return {
-        code: result,
+        code: strResult,
       }
     } else {
-      return result
+      return strResult as unknown as TransformedSource
     }
   },
 }

@@ -1,6 +1,6 @@
 {
   "name": "jest-graphql-transform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jest transformer for .gql imports",
   "type": "module",
   "main": "./dist/index.js",
@@ -14,7 +14,7 @@
   "files": ["dist", "src"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/remind101/jest-transform-graphql.git"
+    "url": "git+https://github.com/Vinccool96/jest-graphql-transform.git"
   },
   "keywords": [
     "jest",
@@ -23,9 +23,9 @@
   "author": "Vinccool96",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/remind101/jest-transform-graphql/issues"
+    "url": "https://github.com/Vinccool96/jest-graphql-transform/issues"
   },
-  "homepage": "https://github.com/remind101/jest-transform-graphql#readme",
+  "homepage": "https://github.com/Vinccool96/jest-graphql-transform#readme",
   "dependencies": {
     "graphql-tag": ">=2",
     "jest": "x"
