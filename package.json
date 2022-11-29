@@ -10,7 +10,7 @@
     "build:test": "tsc",
     "test": "yarn run build:test && jest",
     "prepack": "rm -rf dist && yarn run build",
-    "prepublish": "yarn run pack"
+    "prepublish": "yarn pack"
   },
   "files": ["dist", "src"],
   "repository": {
