@@ -6,8 +6,10 @@
   "main": "./dist/index.js",
   "types": "./dist/types.d.ts",
   "scripts": {
-    "build": "tsc",
-    "test": "yarn run build && jest"
+    "build": "tsc -p tsconfig.base.json",
+    "build:test": "tsc",
+    "test": "yarn run build:test && jest",
+    "prepack": "rm -rf dist && yarn run build"
   },
   "repository": {
     "type": "git",
