@@ -1,18 +1,9 @@
 {
   "name": "jest-graphql-transform",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Jest transformer for .gql imports",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/types.d.ts",
-  "scripts": {
-    "build": "tsc -p tsconfig.base.json",
-    "build:test": "tsc",
-    "test": "yarn run build:test && jest",
-    "prepack": "rm -rf dist && yarn run build",
-    "prepublish": "yarn pack"
-  },
-  "files": ["dist", "src"],
+  "author": "Vinccool96",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vinccool96/jest-graphql-transform.git"
@@ -21,13 +12,34 @@
     "jest",
     "graphql"
   ],
-  "author": "Vinccool96",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Vinccool96/jest-graphql-transform/issues"
   },
   "homepage": "https://github.com/Vinccool96/jest-graphql-transform#readme",
+  "scripts": {
+    "build": "unbuild",
+    "build:test": "tsc",
+    "test": "yarn build:test && jest",
+    "prepack": "yarn build",
+    "prepublish": "yarn pack"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
+    "@jest/core": "^29.5.0",
+    "@jest/transform": "^29.5.0",
     "graphql-tag": ">=2",
     "jest": "x"
   },
@@ -45,6 +57,7 @@
     "prettier": "^2.8.0",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "unbuild": "^1.2.1"
   }
 }

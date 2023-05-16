@@ -12,7 +12,7 @@ const config: Config.InitialOptions = {
   moduleFileExtensions: ["js", "ts", "json"],
   transform: {
     "\\.(j|t)s$": "ts-jest",
-    "\\.(gql|graphql)$": "<rootDir>/dist/index.js",
+    "\\.(gql|graphql)$": "<rootDir>/dist/index.cjs",
   },
   moduleDirectories: ["node_modules"],
   verbose: true,
